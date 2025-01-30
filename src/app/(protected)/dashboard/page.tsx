@@ -1,6 +1,14 @@
 import { auth, signOut } from "@/auth";
 import { Button } from "@/components/ui/button";
 import { FileText, Clock } from "lucide-react";
+import Announcements from "@/components/dashboard/Announcements";
+import Barchart from "@/components/dashboard/Barchart";
+import Pichart from "@/components/dashboard/Pichart";
+import EventCalendar from "@/components/dashboard/EventCalendar";
+import FinanceChart from "@/components/dashboard/FinanceChart";
+import UserCard from "@/components/dashboard/UserCard";
+import StatsBlock from "@/components/dashboard/StatsBlock";
+import DataTableDemo from "@/components/datatable";
 import { RecentlyVisitedCard } from "@/components/dashboard/RecentlyVisitedCard";
 const recentlyVisited = [
   {
@@ -38,28 +46,66 @@ const recentlyVisited = [
 const DashboardPage = async () => {
   const session = await auth();
   return (
-    <div className="w-full overflow-hidden-300 ">
-      <div className="">
-        <main className="p-8 flex flex-col items-center px-28 justify-center">
-          <div className="mb-8 no-scrollbar w-full ">
-            <h1 className="text-3xl text-center font-bold text-gray-100 mb-6">
-              Goood afternoon, {session?.user.name as string}
-            </h1>
+    <div className="p-4 h-full flex gap-4 flex-col md:flex-row">
+      {/* LEFT */}
+      <div className="w-full lg:w-2/3 flex flex-col gap-8">
+        {/* USER CARDS */}
+        <div className="flex gap-4 justify-between flex-col lg:flex-row ">
+          <StatsBlock
+            title="Subscriptions"
+            value={2350}
+            change={{
+              value: 180.1,
+              timeframe: "from last month",
+            }}
+          />
+          <StatsBlock
+            title="Capitalization"
+            value={"$1.5T"}
+            change={{
+              value: -2.3,
+              timeframe: "from last week",
+            }}
+          />
 
-            {/* Recently visited section */}
-            <div>
-              <div className="flex items-center space-x-2 text-sm text-gray-400 mb-4">
-                <Clock className="h-4 w-4" />
-                <span>Recently visited</span>
-              </div>
-              <div className="flex space-x-4 overflow-x-auto pb-4">
-                {recentlyVisited.map((page) => (
-                  <RecentlyVisitedCard key={page.id} page={page} />
-                ))}
-              </div>
-            </div>
+          <StatsBlock
+            title="Daily Trading"
+            value={"$120M"}
+            change={{
+              value: 15.7,
+              timeframe: "from yesterday",
+            }}
+          />
+
+          <StatsBlock
+            title="Stock Price"
+            value={"$320.50"}
+            change={{
+              value: 5.2,
+              timeframe: "from last closing",
+            }}
+          />
+        </div>
+        {/* MIDDLE CHARTS */}
+        <div className="flex gap-4 flex-col lg:flex-row">
+          {/* pi */}
+          <div className=" lg:w-1/2 h-full">
+            <Pichart />
           </div>
-        </main>
+          {/* bar CHART */}
+          <div className="w-full   ">
+            <Barchart />
+          </div>
+        </div>
+        {/* BOTTOM CHART */}
+        <div className="w-full h-[500px]">
+          <DataTableDemo />
+        </div>
+      </div>
+      {/* RIGHT */}
+      <div className="w-full lg:w-1/3 flex flex-col gap-8">
+        <EventCalendar />
+        <Announcements />
       </div>
     </div>
   );

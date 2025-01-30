@@ -32,55 +32,28 @@ import {
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/dashboard",
     icon: Home,
   },
 
   {
-    title: "Search",
-    url: "#",
+    title: "Analytics",
+    url: "/dashboard/analytics",
     icon: Search,
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/dashboard/settings",
     icon: Settings,
   },
 ];
 
-const docsportion = [
-  {
-    title: "Class Notes",
-    url: "#",
-    icon: NotebookPen,
-  },
-  {
-    title: "Assignments",
-    url: "#",
-    icon: NotebookPen,
-  },
-  {
-    title: "Lecture Slides",
-    url: "#",
-    icon: NotebookPen,
-  },
-  {
-    title: "Study Material",
-    url: "#",
-    icon: NotebookPen,
-  },
-  {
-    title: "Reference Books",
-    url: "#",
-    icon: NotebookPen,
-  },
-];
+const docsportion = [];
 
 export function AppSidebar() {
   const { data: session } = useSession();
   if (session === null) return <h1>load</h1>;
-  if (!auth) <h1>here</h1>;
-  console.log(auth, "hey");
+
   return (
     <Sidebar>
       <SidebarHeader className="border-b border-gray">
@@ -97,25 +70,6 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupLabel className="text-sm font-semibold">
-            Private
-          </SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {docsportion.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>

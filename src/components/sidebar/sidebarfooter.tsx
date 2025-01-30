@@ -26,7 +26,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-export const SidebarFootercomp = async () => {
+export const SidebarFootercomp = () => {
   const { data: session } = useSession();
   const firstName = session?.user?.name?.split(" ")[0] || "";
   if (session === null) return <h1>load</h1>;
