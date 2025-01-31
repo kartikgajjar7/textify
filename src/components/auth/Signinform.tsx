@@ -1,12 +1,14 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { set, z } from "zod";
+import { signIn } from "next-auth/react";
 import FormError from "@/components/auth/Formerror";
 import login from "../../../actions/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import FormSuccess from "@/components/auth/Formsuccess";
 import { Button } from "@/components/ui/button";
+import { DEFAULT_REDIRECT } from "@/routes";
 import {
   Form,
   FormControl,
@@ -89,6 +91,33 @@ export default function Loginform() {
               </FormItem>
             )}
           />
+
+          <div className="w-[100%] flex flex-row  items-center justify-around space-x-4">
+            <Button
+              disabled={ispending}
+              type="button"
+              onClick={() => {
+                signIn("github", {
+                  callbackUrl: DEFAULT_REDIRECT,
+                });
+              }}
+              className="bg-white text-black hover:bg-gray-100 w-[45%]"
+            >
+              <img src="/github.svg" alt="sda" />
+            </Button>
+            <Button
+              disabled={ispending}
+              type="button"
+              onClick={() => {
+                signIn("google", {
+                  callbackUrl: DEFAULT_REDIRECT,
+                });
+              }}
+              className="bg-white text-black hover:bg-gray-100 w-[45%]"
+            >
+              <img className=" w-[29px]" src="/goggle.svg" alt="" />
+            </Button>
+          </div>
           <FormSuccess message={success} />
           <FormError message={error} />
           <Button className="w-[100%]" type="submit">
