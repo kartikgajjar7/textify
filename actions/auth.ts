@@ -46,9 +46,10 @@ const login = async (values: z.infer<typeof loginSchema>) => {
 export const signoutserveraction = async () => {
   try {
     await signOut({
+      redirect: true, // Let NextAuth handle redirect
       redirectTo: "/",
-      redirect: true,
     });
+    redirect("/");
   } catch (error) {
     console.error("Sign out error:", error);
     throw error;
