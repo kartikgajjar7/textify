@@ -21,24 +21,20 @@ export const Navbar = ({ isauth }) => {
           width={100}
           height={100}
         />
-        {status !== "loading" ? (
-          status != "authenticated" ? (
-            <button
-              className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-              onClick={handleSignIn}
-            >
-              Sign In
-            </button>
-          ) : (
-            <button
-              className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-              onClick={() => router.push("/dashboard")}
-            >
-              Dashboard
-            </button>
-          )
+        {isauth ? (
+          <button
+            className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            onClick={() => router.push("/dashboard")}
+          >
+            Dashboard
+          </button>
         ) : (
-          ""
+          <button
+            className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            onClick={handleSignIn}
+          >
+            Sign In
+          </button>
         )}
       </div>
     </div>

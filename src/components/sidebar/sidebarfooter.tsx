@@ -1,5 +1,5 @@
 import React from "react";
-
+import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import {
   SidebarFooter,
@@ -9,7 +9,7 @@ import {
 } from "../ui/sidebar";
 import { signoutserveraction } from "../../../actions/auth";
 import { ChevronUp } from "lucide-react";
-import { auth, signOut } from "@/auth";
+import { auth } from "@/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -52,8 +52,11 @@ export const SidebarFootercomp = () => {
               </DropdownMenuItem>
 
               <DropdownMenuItem
-                onClick={async () => {
-                  signoutserveraction();
+                onClick={() => {
+                  signOut({
+                    callbackUrl: "/",
+                    redirect: true,
+                  });
                 }}
               >
                 Log out
