@@ -7,6 +7,8 @@ import { json } from "stream/consumers";
 import Features from "@/components/hero/Features";
 
 export default async function Home() {
+  const session = await auth(); // Fetch session data
+  const isAuthenticated = !!session?.user;
   return (
     <main className=" border p-0 h-screen w-screen ">
       <Navbar />
