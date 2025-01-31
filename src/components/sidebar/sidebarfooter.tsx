@@ -30,19 +30,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export const SidebarFootercomp = () => {
-  const handleSignOut = async () => {
-    try {
-      // Sign out without automatic redirect
-      await signOut({ redirect: false });
-
-      // Manually redirect after successful sign-out
-      router.push("/");
-
-      // Optional: Force refresh if needed
-    } catch (error) {
-      console.error("Sign out failed:", error);
-    }
-  };
   const router = useRouter();
   const { data: session, status } = useSession();
   if (status === "loading") return <h1>Loading...</h1>;
@@ -70,7 +57,7 @@ export const SidebarFootercomp = () => {
                 <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
               </DropdownMenuItem>
 
-              <DropdownMenuItem onClick={handleSignOut}>
+              <DropdownMenuItem onClick={signoutserveraction}>
                 Log out
                 <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
               </DropdownMenuItem>
