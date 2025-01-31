@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import {
@@ -26,8 +28,25 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
 export const SidebarFootercomp = () => {
-  const { data: session } = useSession();
+  const handleSignOut = async () => {
+    try {
+      // Sign out without automatic redirect
+      await signOut({ redirect: false });
+
+      // Manually redirect after successful sign-out
+      router.push("/");
+
+      // Optional: Force refresh if needed
+    } catch (error) {
+      console.error("Sign out failed:", error);
+    }
+  };
+  const router = useRouter();
+  const { data: session, status } = useSession();
+  if (status === "loading") return <h1>Loading...</h1>;
+  if (!session) return null; // Don't render footer if no session
   const firstName = session?.user?.name?.split(" ")[0] || "";
   if (session === null) return <h1>load</h1>;
   return (
@@ -51,14 +70,7 @@ export const SidebarFootercomp = () => {
                 <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
               </DropdownMenuItem>
 
-              <DropdownMenuItem
-                onClick={() => {
-                  signOut({
-                    callbackUrl: "/",
-                    redirect: true,
-                  });
-                }}
-              >
+              <DropdownMenuItem onClick={handleSignOut}>
                 Log out
                 <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
               </DropdownMenuItem>
