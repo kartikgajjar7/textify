@@ -4,7 +4,9 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 export const Navbar = () => {
   const { data: session } = useSession();
+
   const isAuthenticated = !!session?.user;
+  console.log(isAuthenticated, "ISAUTH");
   const router = useRouter();
   const handleSignIn = () => {
     router.push("/auth/signin"); // Navigate to /auth/signin

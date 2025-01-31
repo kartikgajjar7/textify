@@ -47,6 +47,7 @@ export const signoutserveraction = async () => {
   try {
     await signOut({
       redirectTo: "/",
+      redirect: true,
     });
   } catch (error) {
     console.error("Sign out error:", error);
