@@ -11,7 +11,7 @@ export default async function Home() {
   const isAuthenticated = !!session?.user;
   return (
     <main className=" border p-0 h-screen w-screen ">
-      <Navbar />
+      <Navbar isauth={isAuthenticated} />
       <div className="w-full relative flex justify-center lg:h-full ">
         <Hero />
       </div>

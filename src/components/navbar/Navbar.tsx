@@ -2,10 +2,10 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-export const Navbar = () => {
+export const Navbar = ({ isauth }) => {
   const { data: session, status } = useSession();
 
-  const isAuthenticated = !!session?.user;
+  const isAuthenticated = isauth;
   console.log(isAuthenticated, "ISAUTH");
   const router = useRouter();
   const handleSignIn = () => {
