@@ -111,11 +111,11 @@ const topGainers = [
     percentChange: 3.98,
   },
   {
-    symbol: "GOOGL",
-    name: "Alphabet Inc.",
-    price: 2750.8,
-    change: 45.3,
-    percentChange: 1.67,
+    symbol: "TATA",
+    name: "TATA Inc.",
+    price: 120.25,
+    change: 5.75,
+    percentChange: 3.98,
   },
   {
     symbol: "GOOGL",
@@ -125,19 +125,13 @@ const topGainers = [
     percentChange: 1.67,
   },
   {
-    symbol: "GOOGL",
+    symbol: "GOOGL Labs",
     name: "Alphabet Inc.",
     price: 2750.8,
     change: 45.3,
     percentChange: 1.67,
   },
-  {
-    symbol: "GOOGL",
-    name: "Alphabet Inc.",
-    price: 2750.8,
-    change: 45.3,
-    percentChange: 1.67,
-  },
+
   {
     symbol: "MSFT",
     name: "Microsoft Corporation",
@@ -150,6 +144,13 @@ const topGainers = [
     name: "Amazon.com Inc.",
     price: 3380.5,
     change: 62.75,
+    percentChange: 1.89,
+  },
+  {
+    symbol: "Swiggy",
+    name: "Siwiggy.com Inc.",
+    price: 5380.5,
+    change: 22.75,
     percentChange: 1.89,
   },
   {

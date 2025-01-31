@@ -28,7 +28,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/components">
+                  <BreadcrumbLink href="/dashboard">
                     {segments[0]}
                   </BreadcrumbLink>
                 </BreadcrumbItem>
