@@ -56,7 +56,9 @@ export default function Loginform() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username</FormLabel>
+                <FormLabel>
+                  Email<span style={{ color: "red" }}>*</span>
+                </FormLabel>
                 <FormControl>
                   <Input
                     disabled={ispending}
@@ -73,7 +75,9 @@ export default function Loginform() {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>password</FormLabel>
+                <FormLabel>
+                  Password<span style={{ color: "red" }}>*</span>
+                </FormLabel>
                 <FormControl>
                   <Input
                     disabled={ispending}
