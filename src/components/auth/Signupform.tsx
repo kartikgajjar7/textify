@@ -115,7 +115,11 @@ export default function SignUpForm() {
               </FormItem>
             )}
           />
-
+          <div className="flex my-6 items-center">
+            <div className="w-auto h-1 bg-slate-400 flex-grow rounded-full"></div>
+            <div className="mx-2 ">or</div>
+            <div className="w-auto h-1 bg-slate-400 flex-grow rounded-full"></div>
+          </div>
           <div className="w-[100%] flex flex-row  items-center justify-around space-x-4">
             <Button
               disabled={ispending}

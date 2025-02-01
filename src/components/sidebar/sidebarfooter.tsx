@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import {
@@ -57,7 +57,12 @@ export const SidebarFootercomp = () => {
                 <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
               </DropdownMenuItem>
 
-              <DropdownMenuItem onClick={signoutserveraction}>
+              <DropdownMenuItem
+                onClick={async () => {
+                  await signOut();
+                  window.location.reload();
+                }}
+              >
                 Log out
                 <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
               </DropdownMenuItem>
