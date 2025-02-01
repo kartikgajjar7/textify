@@ -14,7 +14,7 @@ export default function PersonalInfo({ name, email, img }) {
         <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
           <Avatar className="w-24 h-24 border-4 border-primary">
             <AvatarImage src={img} alt="John Doe" />
-            <AvatarFallback>{name[0]}</AvatarFallback>
+            <AvatarFallback>A</AvatarFallback>
           </Avatar>
           <div className="text-center sm:text-left">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
