@@ -2,8 +2,8 @@ export const publickRoutes = [
   "/",
   "/dashboard",
   "/dashboard/analytics",
-  "dashboard/settings",
-  "dashboard/profile",
+  "/dashboard/settings",
+  "/dashboard/profile",
 ];
 export const authRoutes = ["/auth/signin", "/auth/signup"];
 export const apiAuthprefix = "/api/auth";
