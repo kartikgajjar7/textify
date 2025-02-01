@@ -8,10 +8,12 @@ import { getUserByEmail } from "../data/user";
 export default {
   providers: [
     Google({
+      allowDangerousEmailAccountLinking: true,
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOGGLE_CLIENT_SECRET,
     }),
     GitHub({
+      allowDangerousEmailAccountLinking: true,
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
