@@ -30,12 +30,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export const SidebarFootercomp = () => {
-  const router = useRouter();
-  const { data: session, status } = useSession();
-  if (status === "loading") return <h1>Loading...</h1>;
-  if (!session) return null; // Don't render footer if no session
-  const firstName = session?.user?.name?.split(" ")[0] || "";
-  if (session === null) return <h1>load</h1>;
+  // const router = useRouter();
+  // const { data: session, status } = useSession();
+  // if (status === "loading") return <h1>Loading...</h1>;
+  // if (!session) return null; // Don't render footer if no session
+  // const firstName = session?.user?.name?.split(" ")[0] || "";
+  // if (session === null) return <h1>load</h1>;
   return (
     <SidebarFooter>
       <SidebarMenu>
@@ -43,13 +43,13 @@ export const SidebarFootercomp = () => {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <SidebarMenuButton className="flex flex-row justify-between items-center">
-                <h1>{firstName}</h1>
+                <h1>Johndoe</h1>
                 <ChevronUp />
               </SidebarMenuButton>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel>{session?.user?.name}</DropdownMenuLabel>
-              <p className="text-xs ml-2  ">{session?.user?.email}</p>
+              <DropdownMenuLabel>{"John Doe"}</DropdownMenuLabel>
+              <p className="text-xs ml-2  ">{"hohndoe@gmail.com"}</p>
               <DropdownMenuSeparator />
 
               <DropdownMenuItem>

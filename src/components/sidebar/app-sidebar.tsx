@@ -56,15 +56,15 @@ const items = [
 const docsportion = [];
 
 export function AppSidebar() {
-  const { data: session } = useSession();
-  if (session === null) return <h1>load</h1>;
+  // const { data: session } = useSession();
+  // if (session === null) return <h1>load</h1>;
 
   return (
     <Sidebar>
       <SidebarHeader className="border-b border-gray">
         <SidebarContent className="flex flex-row items-center justify-between">
           <Avatar className="w-6 h-6">
-            <AvatarImage src={session?.user?.image as string} />
+            <AvatarImage src={""} />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </SidebarContent>
