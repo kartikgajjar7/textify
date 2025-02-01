@@ -4,10 +4,10 @@ import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Weight } from "lucide-react";
 import { Cover } from "@/components/ui/cover";
-
+import { useRouter } from "next/navigation";
 export default function Hero() {
   const isMobile = useIsMobile();
-
+  const router = useRouter();
   return (
     <div className="flex flex-col items-center justify-center w-full md:w-4/5 lg:h-full max-w-9xl">
       <div className="relative flex flex-col w-full h-full">
@@ -56,6 +56,10 @@ export default function Hero() {
           {!isMobile ? (
             <HoverBorderGradient
               containerClassName="rounded-full"
+              onClick={() => {
+                console.log("hey");
+                router.push("/dashboard");
+              }}
               as="button"
               className="dark:bg-black bg-black text-white dark:text-white flex items-center space-x-2"
             >

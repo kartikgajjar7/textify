@@ -23,7 +23,7 @@ export default auth((req) => {
     return;
   }
   if (!isloggedin && !ispublickroute) {
-    return Response.redirect(new URL("/", nextUrl));
+    return Response.redirect(new URL("/auth/signin", nextUrl));
   }
   return;
 });
