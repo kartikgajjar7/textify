@@ -1,10 +1,6 @@
 "use client";
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
-import { Button } from "../ui/button";
+import { User, Home, Search, Settings } from "lucide-react";
 import { useSession } from "next-auth/react";
-import { auth, signOut } from "@/auth";
-import { NotebookPen } from "lucide-react";
-import { sidebar_newdoc_click } from "@/lib/utils";
 import { SidebarFootercomp } from "./sidebarfooter";
 import {
   DropdownMenu,
@@ -44,7 +40,7 @@ const items = [
   {
     title: "Profile",
     url: "/dashboard/profile",
-    icon: Settings,
+    icon: User,
   },
   {
     title: "Settings",

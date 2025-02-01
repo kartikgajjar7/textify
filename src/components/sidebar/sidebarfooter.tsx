@@ -48,7 +48,7 @@ export const SidebarFootercomp = () => {
               </SidebarMenuButton>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel>{session?.user?.name}</DropdownMenuLabel>
+              <DropdownMenuLabel>{session?.user.name}</DropdownMenuLabel>
               <p className="text-xs ml-2  ">{session?.user?.email}</p>
               <DropdownMenuSeparator />
 
