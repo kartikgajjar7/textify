@@ -1,4 +1,5 @@
 export const publickRoutes = [
+  "/",
   "/dashboard",
   "/dashboard/analytics",
   "dashboard/settings",
