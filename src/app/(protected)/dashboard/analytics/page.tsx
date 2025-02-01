@@ -3,7 +3,7 @@ import TopGainersStocks from "@/components/analytics/Topgainer";
 import FinanceChart from "@/components/dashboard/FinanceChart";
 export default function page() {
   return (
-    <div className="h-full w-full flex flex-col items-center justify-start gap-4">
+    <div className="h-full px-[12px] w-full flex flex-col items-center justify-start gap-4">
       <div
         className="flex
         flex-col              // Default for mobile: column layout
@@ -16,7 +16,7 @@ export default function page() {
         <div className="w-full lg:w-1/2">
           <Analytics />
         </div>
-        <div className="w-full lg:w-1/2">
+        <div className="w-full my-3 lg:w-1/2">
           <TopGainersStocks />
         </div>
       </div>
