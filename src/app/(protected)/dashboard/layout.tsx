@@ -24,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <AppSidebar />
         <main className="w-full">
           <div className="flex mt-2 flex-row justify-start items-center">
-            <SidebarTrigger />
+            <SidebarTrigger className="w-14" />
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>

@@ -62,7 +62,6 @@ export function AppSidebar() {
             <AvatarImage src={session?.user?.image as string} />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
-          <NotebookPen onClick={sidebar_newdoc_click} className="w-5" />
         </SidebarContent>
       </SidebarHeader>
       <SidebarContent>
