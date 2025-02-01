@@ -17,13 +17,12 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/sidebar/app-sidebar";
 import { SessionProvider } from "next-auth/react";
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const MemoizedSidebar = memo(AppSidebar);
   const pathname = usePathname();
   const segments = pathname.split("/").filter((segment) => segment);
   return (
     <SessionProvider>
       <SidebarProvider>
-        <MemoizedSidebar />
+        <AppSidebar />
         <main className="w-full">
           <PathDependentHeader />
 
