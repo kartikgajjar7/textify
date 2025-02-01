@@ -35,7 +35,7 @@ export default function Hero() {
       </div>
       <div className="z-[999] flex w-[80%] text-center flex-col top-[80px] items-center lg:top-[200px] absolute lg:w-[40%] lg:h-[50%]">
         <h1 className=" text-2xl  lg:text-5xl  text-center font-semibold font-apercu">
-          Unlock the Power of Collaborative Learning with{" "}
+          Unlock the Power of Data-Driven Investing with
           <span className="relative">
             <Cover>✨Quark</Cover>
           </span>
