@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 
-export default function PersonalInfo({ name, email }) {
+export default function PersonalInfo({ name, email, img }) {
   return (
     <Card className="lg:col-span-2 w-full shadow-xl bg-white dark:bg-gray-800">
       <CardHeader>
@@ -13,8 +13,8 @@ export default function PersonalInfo({ name, email }) {
       <CardContent>
         <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
           <Avatar className="w-24 h-24 border-4 border-primary">
-            <AvatarImage src="/placeholder-avatar.jpg" alt="John Doe" />
-            <AvatarFallback>{name}</AvatarFallback>
+            <AvatarImage src={img} alt="John Doe" />
+            <AvatarFallback>{name[0]}</AvatarFallback>
           </Avatar>
           <div className="text-center sm:text-left">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">

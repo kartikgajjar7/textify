@@ -10,6 +10,7 @@ export default function page() {
       <div className="w-full flex gap-4 flex-col justify-start  py-4 items-center md:flex-row">
         <div className="w-full px-8">
           <PersonalInfo
+            img={session?.user?.image}
             name={session?.user?.name}
             email={session?.user?.email}
           />

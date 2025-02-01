@@ -61,7 +61,7 @@ export function AppSidebar() {
         <SidebarContent className="flex flex-row items-center justify-between">
           <Avatar className="w-6 h-6">
             <AvatarImage src={session?.user?.image as string} />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback>{session?.user?.name[0] as string}</AvatarFallback>
           </Avatar>
         </SidebarContent>
       </SidebarHeader>
