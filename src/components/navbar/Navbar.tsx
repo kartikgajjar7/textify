@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-export const Navbar = ({ isauth }) => {
-  const { status } = useSession();
+export const Navbar = () => {
+  const { data: session, status, update } = useSession();
 
   const router = useRouter();
   const handleSignIn = () => {

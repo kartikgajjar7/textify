@@ -7,11 +7,11 @@ import { json } from "stream/consumers";
 import Features from "@/components/hero/Features";
 
 export default async function Home() {
-  const session = await auth(); // Fetch session data
-  const isAuthenticated = !!session?.user;
+  // Fetch session data
+
   return (
     <main className=" border p-0 h-screen w-screen ">
-      <Navbar isauth={isAuthenticated} />
+      <Navbar />
       <div className="w-full relative flex justify-center lg:h-full ">
         <Hero />
       </div>
