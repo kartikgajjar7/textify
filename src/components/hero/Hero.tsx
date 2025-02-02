@@ -42,13 +42,13 @@ export default function Hero() {
         </h1>
         {!isMobile ? (
           <h1 className="font-apercu mt-4 text-sm lg:text-2xl lg:leading-6">
-            Simplify content creation—write, edit, and share with ease
+            From tracking to trading—Quark simplifies stock market analysis.
           </h1>
         ) : null}
 
         {!isMobile ? (
           <h1 className="font-apercu text-2xl">
-            From drafting to sharing—Quark makes it all easier
+            Analyze, strategize, and invest with ease.
           </h1>
         ) : null}
 
